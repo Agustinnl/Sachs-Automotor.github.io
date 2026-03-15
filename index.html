@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Taller Mecánico SACHS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Poppins;
+color:white;
+
+/* FONDO FIBRA DE CARBONO */
+
+background:
+linear-gradient(45deg,#0a0a0a 25%,transparent 25%),
+linear-gradient(-45deg,#0a0a0a 25%,transparent 25%),
+linear-gradient(45deg,transparent 75%,#0a0a0a 75%),
+linear-gradient(-45deg,transparent 75%,#0a0a0a 75%);
+background-size:40px 40px;
+background-color:#050505;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:#111;
+border-bottom:1px solid #222;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-family:Orbitron;
+font-size:28px;
+color:#ff2b2b;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ff2b2b;
+}
+
+/* HERO */
+
+.hero{
+height:85vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
+url("https://images.unsplash.com/photo-1619767886558-efdc259cde1a");
+
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:60px;
+font-family:Orbitron;
+color:#ff2b2b;
+text-shadow:0 0 25px red;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px red;}
+to{ text-shadow:0 0 35px red;}
+}
+
+.hero p{
+margin-top:20px;
+color:#ccc;
+font-size:18px;
+}
+
+.hero button{
+margin-top:30px;
+padding:15px 40px;
+background:red;
+border:none;
+cursor:pointer;
+border-radius:6px;
+font-size:16px;
+}
+
+.hero button:hover{
+box-shadow:0 0 20px red;
+}
+
+/* SERVICIOS */
+
+.servicios{
+padding:80px 10%;
+text-align:center;
+}
+
+.servicios h2{
+font-size:40px;
+margin-bottom:50px;
+color:#ff2b2b;
+font-family:Orbitron;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#111;
+padding:30px;
+border-radius:10px;
+transition:.4s;
+transform-style:preserve-3d;
+}
+
+.card:hover{
+transform:rotateY(10deg) rotateX(10deg) scale(1.05);
+box-shadow:0 20px 40px rgba(255,0,0,0.3);
+}
+
+.card img{
+width:100%;
+border-radius:8px;
+margin-bottom:15px;
+}
+
+.precio{
+color:#00ff9d;
+font-weight:bold;
+margin-top:10px;
+}
+
+/* GALERIA */
+
+.gallery{
+padding:80px 10%;
+text-align:center;
+}
+
+.gallery h2{
+color:#ff2b2b;
+font-family:Orbitron;
+margin-bottom:40px;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery-grid img{
+width:100%;
+border-radius:10px;
+transition:.4s;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px red;
+}
+
+/* MAPA */
+
+.map{
+padding:80px 10%;
+text-align:center;
+}
+
+.map h2{
+font-family:Orbitron;
+color:#ff2b2b;
+margin-bottom:30px;
+}
+
+.map iframe{
+width:100%;
+height:400px;
+border:none;
+border-radius:10px;
+}
+
+/* CONTACTO */
+
+.contact{
+padding:80px 10%;
+text-align:center;
+}
+
+.contact h2{
+color:#ff2b2b;
+font-family:Orbitron;
+margin-bottom:30px;
+}
+
+input, textarea{
+width:100%;
+padding:15px;
+margin:10px 0;
+background:#111;
+border:1px solid #333;
+color:white;
+border-radius:5px;
+}
+
+button.enviar{
+background:red;
+border:none;
+padding:15px 40px;
+margin-top:10px;
+cursor:pointer;
+color:white;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+color:white;
+text-decoration:none;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+transition:.3s;
+}
+
+.whatsapp:hover{
+transform:scale(1.1);
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+padding:20px;
+text-align:center;
+color:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">SACHS</div>
+
+<ul>
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#servicios">Servicios</a></li>
+<li><a href="#galeria">Galería</a></li>
+<li><a href="#ubicacion">Ubicación</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+
+</nav>
+
+
+<section class="hero" id="inicio">
+
+<div>
+
+<h1>TALLER MECÁNICO SACHS</h1>
+
+<p>Especialistas en reparación, diagnóstico y mantenimiento automotriz</p>
+
+<button onclick="document.getElementById('contacto').scrollIntoView()">Reservar Turno</button>
+
+</div>
+
+</section>
+
+
+<section class="servicios" id="servicios">
+
+<h2>Nuestros Servicios</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc">
+
+<h3>Cambio de Aceite</h3>
+
+<p>Mantenimiento profesional del motor.</p>
+
+<p class="precio">$30.000 ARS</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e">
+
+<h3>Diagnóstico Computarizado</h3>
+
+<p>Escaneo profesional del vehículo.</p>
+
+<p class="precio">$20.000 ARS</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1515923256482-1c04580b477c">
+
+<h3>Reparación de Motor</h3>
+
+<p>Reparación completa de motores.</p>
+
+<p class="precio">Desde $120.000 ARS</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+
+<h3>Frenos y Suspensión</h3>
+
+<p>Revisión completa del sistema.</p>
+
+<p class="precio">$45.000 ARS</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="gallery" id="galeria">
+
+<h2>Autos Reparados</h2>
+
+<div class="gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+<img src="https://images.unsplash.com/photo-1493238792000-8113da705763">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+<img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
+
+</div>
+
+</section>
+
+
+<section class="map" id="ubicacion">
+
+<h2>Ubicación del Taller</h2>
+
+<iframe src="https://maps.google.com/maps?q=Cnel.%20José%20María%20Vilela%201763,%20Ituzaingó,%20Buenos%20Aires&z=15&output=embed"></iframe>
+
+</section>
+
+
+<section class="contact" id="contacto">
+
+<h2>Contacto</h2>
+
+<form action="mailto:lopez.agusn@gmail.com" method="post" enctype="text/plain">
+
+<input name="Nombre" placeholder="Nombre">
+
+<input name="Email" placeholder="Email">
+
+<textarea name="Mensaje" rows="5" placeholder="Mensaje"></textarea>
+
+<button class="enviar">Enviar</button>
+
+</form>
+
+</section>
+
+
+<footer>
+
+© 2026 Taller Mecánico SACHS
+
+</footer>
+
+
+<a class="whatsapp" href="https://wa.me/01167065061" target="_blank">💬</a>
+
+
+</body>
+</html>
